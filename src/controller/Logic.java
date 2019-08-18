@@ -80,9 +80,9 @@ public class Logic {
 	 * @param type It explain difference between file and folder
 	 * */
 	public void print(Map<Directory, Long> file, int length, String type) {
-		System.out.println("\nBiggest " + type + " in /path/to/target:\n");
+		System.out.println("\n Biggest " + type + " in /path/to/target:\n");
 		file.entrySet().stream().limit(length).forEach(item -> System.out.println(
-				".\t" + item.getKey() + "\t" + sizeMappingToMemoryUnits(new Double(item.getValue().toString()))));
+				".\t" + item.getKey() + "\t" + sizeMappingToMemoryUnits(new Double(item.getValue().toString()))+"\n"));
 	}
 
 	/**
