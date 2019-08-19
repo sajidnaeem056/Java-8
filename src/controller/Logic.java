@@ -21,11 +21,12 @@ public class Logic {
 	
 
 	public Logic() {
-		drives = findDrives();
+		drives = findDrives();		
 	}
 	
-	public void start() {
-		storeSizeOfAllFolders();
+	public void start(String directory) {
+		//storeSizeOfAllFolders();
+		calculateSize(new File(directory));
 		print(sorting(folder),Constant.LENGTH,Constant.DIRECTORY_TYPE);
 		print(sorting(files),Constant.LENGTH,Constant.FILES_TYPE);
 	}
@@ -82,7 +83,7 @@ public class Logic {
 	public void print(Map<Directory, Long> file, int length, String type) {
 		System.out.println("\n Biggest " + type + " in /path/to/target:\n");
 		file.entrySet().stream().limit(length).forEach(item -> System.out.println(
-				".\t" + item.getKey() + "\t" + sizeMappingToMemoryUnits(new Double(item.getValue().toString()))+"\n"));
+				"\t" + item.getKey() + "\t" + sizeMappingToMemoryUnits(new Double(item.getValue().toString()))+"\n"));
 	}
 
 	/**

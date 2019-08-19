@@ -48,7 +48,7 @@ public class Folder implements Directory {
 
 	@Override
 	public String toString() {
-		return "Folder [isFolder=" + isFolder + ", path=" + path + ", name=" + name + "]";
+		return "Folder [path=" + path + ", name=" + name + "]";
 	}
 
 

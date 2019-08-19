@@ -8,7 +8,11 @@ public class Start {
 		
 		System.out.println("Please wait for sometime, its working...");
 		Logic logic = new Logic();
-		logic.start();
+		if(args.length>0) {
+		  logic.start(args[0]);
+		}else {
+		  logic.start(System.getProperty("user.home"));	
+		}
 
 	}
 
